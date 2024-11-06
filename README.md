@@ -1,7 +1,7 @@
 
 # Fancy Norminette
 
-It's a Norminette that will still take your mental health away, but it has ✨colors✨!
+It's a Norminette that will still take your mental health away, but it has ✨colors✨, runs constatly, updating every second, and displays a progress bar!
 ## Installation
 To Install Fancy norminette, you just have to run this command, on a a pc on 42 campus.
 
