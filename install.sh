@@ -9,11 +9,16 @@ if ls -l $HOME | grep "scripts_shell"; then
 		echo -e "${RED} There's already a fancy norminette directory inside scripts_shell!}"
 	else
 		git clone git@github.com:AfonsoMota-132/Fancy-Norminette.git $HOME/scripts_shell/fancy_norm
+		chmod +x $HOME/scripts_shell/fancy_norm/utils/install_zshrc.sh
+		source $HOME/scripts_shell/fancy_norm/utils/install_zshrc.sh
+		chmod +x $HOM/scripts_shell/fancy_norm/run.sh	
 		
 	fi
 else
 	mkdir $HOME/scripts_shell/
 	git clone git@github.com:AfonsoMota-132/Fancy-Norminette.git $HOME/scripts_shell/fancy_norm
+	chmod +x $HOME/scripts_shell/fancy_norm/utils/install_zshrc.sh
+	source $HOME/scripts_shell/fancy_norm/utils/install_zshrc.sh
+	chmod +x $HOM/scripts_shell/fancy_norm/run.sh	
 fi
-
 	
