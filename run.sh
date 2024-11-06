@@ -16,12 +16,12 @@ function ProgressBar {
 echo -e "${BLUE}Progress : [${GREEN}${_fill// /#}${RED}${_empty// /-}${BLUE}] ${_progress}%"
 
 }
-if (norminette | grep -c ":") > 0; then
+if (norminette ${1} ${2} | grep -c ":") > 0; then
 	while true; do
 		clear
-		OK_NBR=$(norminette | grep -c "OK")
-		KO_NBR=$(norminette | grep -c "Error!")
-		STR=$(norminette | grep "Error")
+		OK_NBR=$(norminette ${1} ${2} | grep -c "OK")
+		KO_NBR=$(norminette ${1} ${2} | grep -c "Error!")
+		STR=$(norminette ${1} ${2} | grep "Error")
 		let "TOTAL=$OK_NBR+$KO_NBR"
 		if [ $KO_NBR -eq 0 ]; then
 			clear
