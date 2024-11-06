@@ -19,9 +19,9 @@ echo -e "${BLUE}Progress : [${GREEN}${_fill// /#}${RED}${_empty// /-}${BLUE}] ${
 if (norminette ${1} ${2} | grep -c ":") > 0; then
 	while true; do
 		clear
-		OK_NBR=$(norminette ${1} ${2} | grep -c "OK")
-		KO_NBR=$(norminette ${1} ${2} | grep -c "Error!")
-		STR=$(norminette ${1} ${2} | grep "Error")
+		OK_NBR=$(norminette ${1} ${2} | grep -c OK)
+		KO_NBR=$(norminette ${1} ${2} | grep -c Error!)
+		STR=$(norminette ${1} ${2} | grep -e Error: -e Error!)
 		let "TOTAL=$OK_NBR+$KO_NBR"
 		if [ $KO_NBR -eq 0 ]; then
 			clear
@@ -42,11 +42,7 @@ if (norminette ${1} ${2} | grep -c ":") > 0; then
 		echo -e "${BLUE}Ok		:${GREEN}" $OK_NBR "/" $TOTAL " "
 		echo -e "${BLUE}Error		:${RED}" $KO_NBR "/" $TOTAL " "
 		echo -e "${BLUE}Percentage	:" $PERCENTAGE "% "
-		echo "$STR"
-		for ((i=1;i<=5;i++)); do
-			keep2 ~/scripts_shell/fancy_norm/logs/logfile "$STR"
-			cat ~/scripts_shell/fancy_norm/logs/logfile
-		done
+		echo "$STR" | head -n 20
 		sleep 0.5
 		clear
 	done
