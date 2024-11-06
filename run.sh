@@ -44,8 +44,8 @@ if (norminette ${1} ${2} | grep -c ":") > 0; then
 		echo -e "${BLUE}Percentage	:" $PERCENTAGE "% "
 		echo "$STR"
 		for ((i=1;i<=5;i++)); do
-			keep2 ~/scripts_shell/fancy_norm/logs/logfile "$i"
-			cat logfile
+			keep2 ~/scripts_shell/fancy_norm/logs/logfile "$STR"
+			cat ~/scripts_shell/fancy_norm/logs/logfile
 		done
 		sleep 0.5
 		clear
