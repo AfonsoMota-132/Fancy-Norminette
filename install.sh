@@ -44,33 +44,33 @@ if ls -l $HOME | grep "scripts_shell"; then
 	fi
 fi
 if ls -l $HOME | grep "scripts_shell"; then
-	while [ $CHECK -eq 1 ]; do
-			echo "${BLUE}What's your source's directory name?"
-			
-			read SRC
-			while true; do	
-				read -p "Is $SRC the name you always use for the Source's directory?" yn
-	    		case $yn in
-	    	        [Yy]* ) CHECK=0; break;;
-	    	        [Nn]* ) exit;;
-	    	        * ) echo "Please answer yes or no.";;	
-				esac
-			done
-	done
-	CHECK=1
-	while [ $CHECK -eq 1 ]; do
-			echo "${BLUE}What's your Include's directory name?"
-			
-			read INC
-			while true; do	
-				read -p "Is $INC the name you always use for the Include's directory?" yn
-	    		case $yn in
-	    	        [Yy]* ) CHECK=0; break;;
-	    	        [Nn]* ) exit;;
-	    	        * ) echo "Please answer yes or no.";;	
-				esac
-			done
-	done
+	# while [ $CHECK -eq 1 ]; do
+	# 		echo "${BLUE}What's your source's directory name?"
+	# 		
+	# 		read SRC
+	# 		while true; do	
+	# 			read -p "Is $SRC the name you always use for the Source's directory?" yn
+	#     		case $yn in
+	#     	        [Yy]* ) CHECK=0; break;;
+	#     	        [Nn]* ) exit;;
+	#     	        * ) echo "Please answer yes or no.";;	
+	# 			esac
+	# 		done
+	# done
+	# CHECK=1
+	# while [ $CHECK -eq 1 ]; do
+	# 		echo "${BLUE}What's your Include's directory name?"
+	# 		
+	# 		read INC
+	# 		while true; do	
+	# 			read -p "Is $INC the name you always use for the Include's directory?" yn
+	#     		case $yn in
+	#     	        [Yy]* ) CHECK=0; break;;
+	#     	        [Nn]* ) exit;;
+	#     	        * ) echo "Please answer yes or no.";;	
+	# 			esac
+	# 		done
+	# done
 	mkdir $HOME/scripts_shell/
 	git clone git@github.com:AfonsoMota-132/Fancy-Norminette.git $HOME/scripts_shell/fancy_norm
 	chmod +x $HOME/scripts_shell/fancy_norm/utils/install_zshrc.sh
