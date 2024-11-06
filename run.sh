@@ -43,6 +43,10 @@ if (norminette ${1} ${2} | grep -c ":") > 0; then
 		echo -e "${BLUE}Error		:${RED}" $KO_NBR "/" $TOTAL " "
 		echo -e "${BLUE}Percentage	:" $PERCENTAGE "% "
 		echo "$STR"
+		for ((i=1;i<=5;i++)); do
+			keep2 ~/scripts_shell/fancy_norm/logs/logfile "$i"
+			cat logfile
+		done
 		sleep 0.5
 		clear
 	done
