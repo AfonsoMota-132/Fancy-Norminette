@@ -36,6 +36,8 @@ CHECK=1
 # 			esac
 # 		done
 # done
+mkdir $HOME/scripts_shell/
+clear
 if ls -l $HOME | grep "scripts_shell"; then
 	clear
 	if ls -l $HOME/scripts_shell | grep "fancy_norm"; then
@@ -44,7 +46,9 @@ if ls -l $HOME | grep "scripts_shell"; then
 		exit
 	fi
 fi
+clear
 if ls -l $HOME | grep "scripts_shell"; then
+	clear
 	while [ $CHECK -eq 1 ]; do
  		echo "${BLUE}What's your source's directory name?"
 			
@@ -72,12 +76,12 @@ if ls -l $HOME | grep "scripts_shell"; then
 				esac
 			done
 	done
-	mkdir $HOME/scripts_shell/
+	clear
 	git clone git@github.com:AfonsoMota-132/Fancy-Norminette.git $HOME/scripts_shell/fancy_norm
 	chmod +x $HOME/scripts_shell/fancy_norm/utils/install_zshrc.sh
 	~/scripts_shell/fancy_norm/utils/install_zshrc.sh $SRC $INC
 	chmod +x $HOME/scripts_shell/fancy_norm/run.sh	
 	source ~/.zshrc
 	clear
-	echo "${GREEN} Fancynette was installed successfully!"
+	echo "${GREEN}Fancynette was installed successfully!"
 fi	
