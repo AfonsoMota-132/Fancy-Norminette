@@ -30,7 +30,6 @@ if (norminette | grep -c ":") > 0; then
 			echo -e "${BLUE}║   ${GREEN}🎉 Everything's according to norm 🎉 ${BLUE}  ║ "
 			echo -e "${BLUE}║                                          ║ "
 			echo -e "${BLUE}╚══════════════════════════════════════════╝ "
-			echo -e "${GREEN}Everything's according to norm!"
 			break
 		fi
 		let "PERCENTAGE=$OK_NBR*100/$TOTAL"
