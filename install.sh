@@ -51,11 +51,11 @@ if ls -l $HOME | grep "scripts_shell"; then
 			read SRC
 			while true; do	
 				read -p "Is $SRC the name you always use for the Source's directory?" yn
-	    		case $yn in
-	    	        [Yy]* ) CHECK=0; break;;
-	    	        [Nn]* ) exit;;
-	    	        * ) echo "Please answer yes or no.";;	
-				esac
+	    			case $yn in
+	    	        	[Yy]* ) CHECK=0; break;;
+	    	        	[Nn]* ) break;;
+	    	        	* ) echo "Please answer yes or no.";;	
+					esac
 			done
 	done
 	CHECK=1
@@ -65,10 +65,10 @@ if ls -l $HOME | grep "scripts_shell"; then
 			read INC
 			while true; do	
 				read -p "Is $INC the name you always use for the Include's directory?" yn
-	    		case $yn in
-	    	        [Yy]* ) CHECK=0; break;;
-	    	        [Nn]* ) exit;;
-	    	        * ) echo "Please answer yes or no.";;	
+	    			case $yn in
+	    	        	[Yy]* ) CHECK=0; break;;
+	    	        	[Nn]* ) break;;
+	    	        	* ) echo "Please answer yes or no.";;	
 				esac
 			done
 	done
@@ -79,5 +79,5 @@ if ls -l $HOME | grep "scripts_shell"; then
 	chmod +x $HOME/scripts_shell/fancy_norm/run.sh	
 	source ~/.zshrc
 	clear
-	echo -e "${GREEN} Fancynette was installed successfully!"
+	echo "${GREEN} Fancynette was installed successfully!"
 fi	
