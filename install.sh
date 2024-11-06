@@ -41,6 +41,7 @@ if ls -l $HOME | grep "scripts_shell"; then
 	if ls -l $HOME/scripts_shell | grep "fancy_norm"; then
 		clear
 		echo "${RED}There's already a fancy norminette directory inside scripts_shell!"
+		exit
 	fi
 fi
 if ls -l $HOME | grep "scripts_shell"; then
@@ -74,7 +75,7 @@ if ls -l $HOME | grep "scripts_shell"; then
 	mkdir $HOME/scripts_shell/
 	git clone git@github.com:AfonsoMota-132/Fancy-Norminette.git $HOME/scripts_shell/fancy_norm
 	chmod +x $HOME/scripts_shell/fancy_norm/utils/install_zshrc.sh
-	source $HOME/scripts_shell/fancy_norm/utils/install_zshrc.sh $SRC $INC
+	~/scripts_shell/fancy_norm/utils/install_zshrc.sh $SRC $INC
 	chmod +x $HOME/scripts_shell/fancy_norm/run.sh	
 	source ~/.zshrc
 	clear
